@@ -1,4 +1,4 @@
-tensorflow==2.20.0
+tensorflow==2.15.0
 pandas==2.3.3
 ipykernel==7.1.0
 streamlit==1.53.1
