@@ -1,6 +1,6 @@
 # Setup environment
 import os
-os.environ["TF_USE_LEGACY_KERAS"] = "1"
+os.environ['TF_USE_LEGACY_KERAS'] = '1'
 
 # Import libraries
 import streamlit as st
@@ -32,9 +32,10 @@ def predict_next_word(model, tokenizer, text, max_sequence_len):
     return None
 
 # Streamlit App
-st.title("Next Word Prediction With LSTM")
-input_text = st.text_input("Enter the sequence of Words", "To be or not to")
-if st.button("Predict Next Word"):
+st.title('Next Word Prediction With LSTM')
+st.write('Use sequences from Hamlet, by William Shakespeare')
+input_text = st.text_input('Enter the Sequence of Words (Try longer sequences for better results)', 'To be or not to')
+if st.button('Predict Next Word'):
     max_sequence_len = model.input_shape[1] + 1
     next_word = predict_next_word(model, tokenizer, input_text, max_sequence_len)
     st.write(f'Next word: {next_word}')
